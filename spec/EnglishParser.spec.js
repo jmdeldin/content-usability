@@ -7,7 +7,22 @@ describe("EnglishParser", function () {
     this.ep = new EnglishParser();
   });
 
-  it("//determines the number of words", function () {
+  describe("#getWords", function () {
+    before(function () {
+      this.words = ["foo", "bar", "baz"];
+    });
+
+    it("splits words regardless of spaces", function () {
+      expect(this.ep.getWords("foo   \tbar   baz  ")).toEqual(this.words);
+    });
+
+    it("does not count a hyphen twice", function () {
+      expect(this.ep.getWords("foo-bar")).toEqual(["foo-bar"]);
+    });
+  });
+
+  it("determines the number of words", function () {
+    expect(this.ep.getNumberWords("foo bar baz")).toEqual(3);
   });
 
   describe("#getSentences", function () {
