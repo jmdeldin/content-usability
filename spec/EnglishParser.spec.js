@@ -106,11 +106,18 @@ describe("EnglishParser", function () {
     });
   });
 
-  describe("#getGradeLevel", function () {
+  describe("#getNumberSyllablesInText", function () {
+    it("returns 3 for 3 simple words", function () {
+      var r = this.ep.getNumberSyllablesInText("foo bar baz");
+      expect(r).toEqual(3);
+    });
+  });
+
+  describe(".getGradeLevel", function () {
     it("handles harder sentences", function () {
       var text = "The Australian platypus is seemingly a hybrid of a mammal "
                + "and reptilian creature.";
-      expect(this.ep.getGradeLevel(text)).toEqual(13.1);
+      expect(EnglishParser.getGradeLevel(text)).toBeGreaterThan(11.0);
     });
   });
 });
