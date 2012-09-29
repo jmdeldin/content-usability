@@ -64,6 +64,45 @@ describe("EnglishParser", function () {
     expect(this.ep.getNumSentences(text)).toEqual(2);
   });
 
-  it("//determines the number of syllables", function () {
+  describe("#getNumberSyllables", function () {
+    before(function () {
+      this.f = this.ep.getNumberSyllables;
+    });
+
+    it("counts one character as one syllable", function () {
+      expect(this.ep.getNumberSyllables("a")).toEqual(1);
+    });
+
+    it("counts two characters as one syllable", function () {
+      expect(this.ep.getNumberSyllables("ab")).toEqual(1);
+    });
+
+    it("counts three characters as one syllable", function () {
+      expect(this.ep.getNumberSyllables("abc")).toEqual(1);
+    });
+
+    it("counts two syllables in 'ruby'", function () {
+      expect(this.ep.getNumberSyllables("ruby")).toEqual(2);
+    });
+
+    it("counts two syllables in 'races'", function () {
+      expect(this.ep.getNumberSyllables("races")).toEqual(2);
+    });
+
+    it("counts three syllables in 'discomfit'", function () {
+      expect(this.ep.getNumberSyllables("discomfit")).toEqual(3);
+    });
+
+    it("counts two syllables in 'handle'", function () {
+      expect(this.ep.getNumberSyllables("handle")).toEqual(2);
+    });
+
+    it("counts two syllables in 'themselves'", function () {
+      expect(this.ep.getNumberSyllables("themselves")).toEqual(2);
+    });
+
+    it("handles hypens", function () {
+      expect(this.ep.getNumberSyllables("Jon-Michael")).toEqual(3);
+    });
   });
 });
