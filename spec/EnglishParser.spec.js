@@ -61,7 +61,7 @@ describe("EnglishParser", function () {
 
   it("determines the number of sentences", function () {
     var text = "See Spot run! See Spot play!";
-    expect(this.ep.getNumSentences(text)).toEqual(2);
+    expect(this.ep.getNumberSentences(text)).toEqual(2);
   });
 
   describe("#getNumberSyllables", function () {
