@@ -109,4 +109,10 @@ describe('helpers', function () {
             expect(xrange(1, 3, 1)).toEqual([1, 2]);
         });
     });
+
+    describe('.unique', function () {
+        it('removes duplicates', function () {
+            expect(unique([1, 1, 2, 2, 3])).toEqual([1, 2, 3]);
+        });
+    });
 });
