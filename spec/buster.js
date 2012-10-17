@@ -8,7 +8,8 @@ config.specs = {
         // lib/helpers.js needs to be loaded first
         "lib/helpers.js",
         "lib/EnglishParser.js",
-        "lib/interpreters.js"
+        "lib/interpreters.js",
+        "lib/gradeHelpers.js",
     ],
     specs: [
         "spec/*.spec.js"
