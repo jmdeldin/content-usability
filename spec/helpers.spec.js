@@ -1,6 +1,6 @@
 /*global buster: true, describe: true, it: true, before: true,
   ordinalize: true, pluralize: true, reduce: true, sum: true,
-  average: true*/
+  average: true, select: true, trim: true */
 
 "use strict";
 var expect = buster.assertions.expect;
@@ -74,6 +74,27 @@ describe('helpers', function () {
     describe('.average', function () {
         it('averages an array', function () {
             expect(average([1, 2, 3])).toEqual(2);
+        });
+    });
+
+    describe('.select', function () {
+        it('selects elements matching a condition', function () {
+            var ary = [1, 2, 3, 4],
+                sel = select(ary, function (x) { return x % 2 === 0; });
+            expect(sel).toEqual([2, 4]);
+        });
+
+        it('returns an empty array if no elements match', function () {
+            var ary = [1, 3, 5, 9],
+                sel = select(ary, function (x) { return x % 2 === 0; });
+            expect(sel).toEqual([]);
+        });
+    });
+
+    describe('.trim', function () {
+        it('trims leading and trailing whitespace', function () {
+            var str = "\n\r\t   foo \n\r\n\t   ";
+            expect(trim(str)).toEqual("foo");
         });
     });
 });
