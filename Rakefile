@@ -49,5 +49,5 @@ end
 
 desc 'Generate documentation for each JS file'
 task :doc do
-  sh "docco lib/"
+  sh "docco lib/*.js"
 end
