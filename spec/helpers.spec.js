@@ -1,5 +1,6 @@
-/*global buster: true, describe: true, it: true, before: true*/
-/*global ordinalize: true, pluralize: true, reduce: true, sum: true*/
+/*global buster: true, describe: true, it: true, before: true,
+  ordinalize: true, pluralize: true, reduce: true, sum: true,
+  average: true*/
 
 "use strict";
 var expect = buster.assertions.expect;
@@ -67,6 +68,12 @@ describe('helpers', function () {
     describe('.sum', function () {
         it('sums an array', function () {
             expect(sum([1, -10, 100, 1000])).toEqual(1091);
+        });
+    });
+
+    describe('.average', function () {
+        it('averages an array', function () {
+            expect(average([1, 2, 3])).toEqual(2);
         });
     });
 });
