@@ -97,4 +97,16 @@ describe('helpers', function () {
             expect(trim(str)).toEqual("foo");
         });
     });
+
+    describe('.range', function () {
+        it('returns an array', function () {
+            expect(range(1, 3)).toEqual([1, 2, 3]);
+        });
+    });
+
+    describe('.xrange', function () {
+        it('returns an array', function () {
+            expect(xrange(1, 3)).toEqual([1, 2]);
+        });
+    });
 });
