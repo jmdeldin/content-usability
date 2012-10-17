@@ -1,6 +1,7 @@
 /*global buster: true, describe: true, it: true, before: true,
   ordinalize: true, pluralize: true, reduce: true, sum: true,
-  average: true, select: true, trim: true */
+  average: true, select: true, trim: true, range: true,
+  xrange: true, toggle: true, unique: true, document: true*/
 
 "use strict";
 var expect = buster.assertions.expect;
@@ -113,6 +114,17 @@ describe('helpers', function () {
     describe('.unique', function () {
         it('removes duplicates', function () {
             expect(unique([1, 1, 2, 2, 3])).toEqual([1, 2, 3]);
+        });
+    });
+
+    describe('.toggle', function () {
+        it('swaps the display property', function () {
+            var on = document.createElement('div'),
+                off = document.createElement('div');
+            off.style.display = 'none';
+
+            expect(toggle(on).style.display).toEqual('none');
+            expect(toggle(off).style.display).toEqual('');
         });
     });
 });
