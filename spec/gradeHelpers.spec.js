@@ -1,6 +1,7 @@
 /*jslint browser: true*/
 /*global buster: true, describe: true, it: true, before: true,
-  gradeOptions: true, populateGradeSelect: true, getSelectedGrade: true*/
+  gradeOptions: true, populateGradeSelect: true, getSelectedGrade: true,
+  xrange: true, range: true, score2grade: true, unique: true*/
 
 "use strict";
 var expect = buster.assertions.expect;
@@ -39,6 +40,25 @@ describe('grade helpers', function () {
             s += '</select>';
             document.querySelector('body').innerHTML = s;
             expect(getSelectedGrade('grade_select')).toEqual(3);
+        });
+    });
+
+    describe('.score2grade', function () {
+        function testGradeRange(start, stop, grade) {
+            var r = range(start, stop, 1),
+                g = r.map(function (x) { return score2grade(x); });
+            g = unique(g);
+
+            expect(g.length).toEqual(1);
+            expect(g[0]).toEqual(grade);
+        }
+
+        it('converts scores to an grades', function () {
+            testGradeRange(0, 59, 'F');
+            testGradeRange(60, 69, 'D');
+            testGradeRange(70, 79, 'C');
+            testGradeRange(80, 89, 'B');
+            testGradeRange(90, 100, 'A');
         });
     });
 });
