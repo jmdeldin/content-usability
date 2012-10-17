@@ -7,9 +7,10 @@ config.specs = {
     sources: [
         // lib/helpers.js needs to be loaded first
         "lib/helpers.js",
+        "lib/gradeHelpers.js",
+        "lib/responseHandlers.js",
         "lib/EnglishParser.js",
         "lib/interpreters.js",
-        "lib/gradeHelpers.js",
     ],
     specs: [
         "spec/*.spec.js"
