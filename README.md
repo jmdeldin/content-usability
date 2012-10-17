@@ -8,12 +8,12 @@ project and is under heavy development.
 
 1. Node (`brew install node`)
 2. Buster (`npm install -g buster`)
+3. Ruby 1.9.2+
 
 ## Testing
 
-1. `buster-server`
-2. Visit http://localhost:1111, click "Capture"
-3. `buster-autotest`
+1. `rake spec:server`
+3. `rake spec:auto`
 
 ## Running
 
