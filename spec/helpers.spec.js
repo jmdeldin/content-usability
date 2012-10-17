@@ -1,5 +1,5 @@
 /*global buster: true, describe: true, it: true, before: true*/
-/*global ordinalize: true, pluralize: true*/
+/*global ordinalize: true, pluralize: true, reduce: true, sum: true*/
 
 "use strict";
 var expect = buster.assertions.expect;
@@ -7,7 +7,7 @@ var expect = buster.assertions.expect;
 buster.spec.expose();
 
 describe('helpers', function () {
-    describe('ordinalize', function () {
+    describe('.ordinalize', function () {
         before(function () {
             this.f = ordinalize;
         });
@@ -38,7 +38,7 @@ describe('helpers', function () {
     });
 
 
-    describe('pluralize', function () {
+    describe('.pluralize', function () {
         before(function () {
             this.f = pluralize;
         });
@@ -53,6 +53,20 @@ describe('helpers', function () {
 
         it("adds an s to no items", function () {
             expect(pluralize(0, "level", "levels")).toEqual("levels");
+        });
+    });
+
+    describe('.reduce', function () {
+        it("accumulates the results of an operation over an array", function () {
+            var a = [2, 4, 6, 8];
+            expect(reduce(a, 0, function (sum, x) { return sum + x; })).
+                toEqual(20);
+        });
+    });
+
+    describe('.sum', function () {
+        it('sums an array', function () {
+            expect(sum([1, -10, 100, 1000])).toEqual(1091);
         });
     });
 });
