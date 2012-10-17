@@ -34,29 +34,30 @@
 readability, legibility, and navigability. It is a portion of my master's
 project and is under heavy development.</p>
 
-<h2>Requirements</h2>
+<h2>Progress Report</h2>
 
-<ol>
-<li>Node (<code>brew install node</code>)</li>
-<li>Buster (<code>npm install -g buster</code>)</li>
-</ol><h2>Testing</h2>
+<h3>2012-10-17</h3>
 
-<ol>
-<li><code>buster-server</code></li>
-<li>Visit http://localhost:1111, click "Capture"</li>
-<li><code>buster-autotest</code></li>
-</ol><h2>Running</h2>
+<p>Over the weekend and the last few days, I:</p>
 
-<ol>
-<li>Install
-<a href="https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid">Extensions Reloader</a>
-in Chrome.</li>
-<li>On <code>chrome://extensions</code>, select "Load unpacked extension"</li>
-<li>Select the project's root directory</li>
-<li>Visit a web page and select the magnifying glass</li>
-</ol><h2>Author</h2>
+<ul>
+<li>Figured out how to build a Chrome extension</li>
+<li>Designed the interface</li>
+<li>Implemented readability
 
-<p>Jon-Michael Deldin (<a href="mailto:dev@jmdeldin.com">dev@jmdeldin.com</a>)</p>
+<ul>
+<li>I'm going to circle back later and implement a better method for finding text nodes. Right now, we just need some heuristics to ignore menu text.</li>
+</ul>
+</li>
+<li>Developed the architecture for having each metric communicate</li>
+<li>Researched OOP in JavaScript (conclusion: it's unpleasant)</li>
+</ul><p>You can view my <a href="https://github.com/jmdeldin/content-usability/commits/master">code activity</a> too.</p>
+
+<p>Here's what the extension looks like in action:</p>
+
+<p><img src="http://i.imgur.com/ea25d.png" alt="Evaluation of Dr Seuss Entry on Simple Wikipedia"></p>
+
+<p><img src="http://i.imgur.com/mFezq.png" alt="Evaluation of a Wolfram Article"></p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/jmdeldin">jmdeldin</a></p>
@@ -64,6 +65,16 @@ in Chrome.</li>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-4757671-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
