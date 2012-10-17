@@ -100,13 +100,13 @@ describe('helpers', function () {
 
     describe('.range', function () {
         it('returns an array', function () {
-            expect(range(1, 3)).toEqual([1, 2, 3]);
+            expect(range(1, 3, 1)).toEqual([1, 2, 3]);
         });
     });
 
     describe('.xrange', function () {
         it('returns an array', function () {
-            expect(xrange(1, 3)).toEqual([1, 2]);
+            expect(xrange(1, 3, 1)).toEqual([1, 2]);
         });
     });
 });
