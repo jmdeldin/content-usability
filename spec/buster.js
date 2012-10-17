@@ -4,7 +4,7 @@ config["specs"] = {
   rootPath: "../",
   environment: "browser",
   sources: [
-    "lib/EnglishParser.js"
+    "lib/*.js"
   ],
   tests: [
     "spec/*.spec.js"

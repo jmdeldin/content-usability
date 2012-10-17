@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- This is the browser action GUI. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="css/gui.css" rel="stylesheet">
+    <title>Content Usability Evaluator</title>
+  </head>
+  <body>
+    <form action="#" method="get">
+      <h1>Content Usability Evaluator</h1>
+      <fieldset>
+        <legend>Readability</legend>
+        <label>
+          Estimate the reading level for this page:
+          <select id="grade_level">
+          </select>
+        </label>
+
+      </fieldset>
+      <div class="action">
+        <button id="submit">Evaluate</button>
+      </div>
+    </form>
+
+    <section id="results">
+      <h1>Results</h1>
+
+      <div id="overall">
+        <div id="score">
+          <span id="overall_grade">A</span>
+          <span id="overall_score">96%</span>
+        </div>
+        <div id="overall_msg">
+          <span></span>
+          See below for more details.
+        </div>
+      </div>
+
+      <section id="readability">
+        <h2>Readability (<span id="readability_score">1</span>/100)</h2>
+        <p id="readability_gl_block">
+          Estimated Grade Level: <span id="readability_gl">3rd</span></p>
+        <p>
+          <span id="readability_gl_msg">This is great!</span>
+          <a href="http://www.useit.com/alertbox/20050314.html"
+             title="Lower-Literacy Users: Writing for a Broad Consumer Audience">
+            Research by Nielsen Norman Group</a> has shown optimizing
+          your content for lower-literacy users increases comprehension for
+          all users.
+        </p>
+        <div class="method">
+          <p>
+            How did we determine this? We applied
+            the <a href="http://en.wikipedia.org/wiki/Flesch-Kincaid_readability_test">Flesch-Kincaid
+              grade level</a> formula to your text.</p>
+        </div>
+      </section>
+      <button id="redo">Re-evaluate?</button>
+    </section>
+
+    <script src="lib/EnglishParser.js"></script>
+    <script src="lib/gui.js"></script>
+  </body>
+</html>

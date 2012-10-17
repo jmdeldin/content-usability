@@ -1,0 +1,114 @@
+$yellow: #FFFF88;
+$red: #CC0000;
+$light_green: #CDEB8B;
+$olive: #73880A;
+$background: #F9F7ED;
+$foreground: #303942;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#overall {
+    display: table-row;
+}
+#score {
+    vertical-align: middle;
+    padding: 20px;
+    display: table-cell;
+    text-align: center;
+    /* float: left; */
+
+    #overall_grade {
+        color: $olive;
+        font-weight: bold;
+        font-size: 42px;
+        display: block;
+    }
+    #overall_score {
+        display: block;
+        font-size: 80%;
+        color: #666;
+    }
+}
+
+#overall_msg {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+html {
+    color: $foreground;
+    background: $background;
+    font: 16px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: #fff;
+    padding: 1em;
+    border: 2px solid #eee;
+    width: 600px;
+    margin: 2px auto;
+}
+
+h1, h2 {
+    color: $olive;
+    border-bottom: 5px solid $olive;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0 0 0.5em;
+}
+h2 {
+    font-size: 22px;
+    margin: 1em 0 0.5em;
+}
+
+fieldset {
+    border: 0;
+    margin: 0 0 0.5em;
+
+    legend {
+        margin-bottom: 0.5em;
+        display: block;
+        width: 100%;
+        font-weight: bold;
+    }
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.feedback {
+    background: $yellow;
+    font-weight: bold;
+    padding: 0 2px;
+}
+
+#readability {
+    #readability_gl_block {
+        font-weight: bold;
+    }
+    #readability_gl_msg {
+        @extend .feedback;
+    }
+}
+
+.action {
+    margin: 1em 0 0;
+}
+
+button {
+    padding: 0.5em;
+    font-size: 14px;
+}
+
+.method {
+    border-left: 4px solid #C3D9FF;
+    margin-left: 2em;
+    padding: 0 0.5em;
+    font-size: 80%;
+}

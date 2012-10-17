@@ -120,4 +120,12 @@ describe("EnglishParser", function () {
       expect(EnglishParser.getGradeLevel(text)).toBeGreaterThan(11.0);
     });
   });
+
+  describe(".getRoundedGradeLevel", function () {
+    it("handles harder sentences", function () {
+      var text = "The Australian platypus is seemingly a hybrid of a mammal "
+               + "and reptilian creature.";
+      expect(EnglishParser.getRoundedGradeLevel(text)).toEqual(11);
+    });
+  });
 });
