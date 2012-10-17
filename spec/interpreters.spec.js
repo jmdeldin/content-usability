@@ -39,4 +39,12 @@ describe('gradeInterpreter', function () {
         var r = this.f(1.0, 12.0).interpret();
         expect(r[1]).toEqual(0);
     });
+
+    it("uses 'additionally' if the user has already lost points", function () {
+        expect(this.f(1.0, 12.0).interpret()[0]).toMatch(/Additionally/);
+    });
+
+    it("uses 'however' if the user has not lost points", function () {
+        expect(this.f(1.0, 8.0).interpret()[0]).toMatch(/However/);
+    });
 });
