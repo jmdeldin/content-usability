@@ -34,4 +34,9 @@ describe('gradeInterpreter', function () {
         expect(r[0]).toMatch(/However, you underestimated by 1 grade level\./);
         expect(r[1]).toEqual(90);
     });
+
+    it("penalizes content a maximum of 100 points", function () {
+        var r = this.f(1.0, 12.0).interpret();
+        expect(r[1]).toEqual(0);
+    });
 });
